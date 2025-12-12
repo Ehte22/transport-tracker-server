@@ -31,7 +31,7 @@ app.use("/api/v1/route", routeRoutes);
 app.use("/api/v1/alert", alertRoutes);
 app.use("/api/v1/device", deviceRoutes);
 
-app.get("/", (req, res) => res.json({ ok: true, msg: "Transport Tracker API" }));
+// app.get("/", (req, res) => res.json({ ok: true, msg: "Transport Tracker API" }));
 
 // SPA fallback (React/Vite/Angular)
 app.get("*", (req, res) => {
