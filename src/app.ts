@@ -33,7 +33,7 @@ app.use("/api/v1/device", deviceRoutes);
 
 // SPA fallback (React/Vite/Angular)
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "dist-frontend", "index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
