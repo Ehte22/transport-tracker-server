@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({ origin: true }));
 app.use(express.json());
 
-const frontendPath = path.join(__dirname, "../frontend-dist");
+const frontendPath = path.join(__dirname, "dist-frontend");
 
 app.use(express.static(frontendPath));
 
