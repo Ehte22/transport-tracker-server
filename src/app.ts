@@ -17,9 +17,11 @@ const app = express();
 app.use(cors({ origin: true }));
 app.use(express.json());
 
-// const frontendPath = path.join(__dirname, "../dist-frontend");
+const __dirnamePath = path.resolve();
 
-app.use(express.static("dist-frontend"));
+const frontendPath = path.join(__dirnamePath, "../frontend-dist");
+
+app.use(express.static(frontendPath));
 
 // routes
 app.use("/api/v1/auth", authRoutes);
@@ -33,7 +35,7 @@ app.use("/api/v1/device", deviceRoutes);
 
 // SPA fallback (React/Vite/Angular)
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
