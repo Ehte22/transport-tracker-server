@@ -18,7 +18,7 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 
 const __dirnamePath = path.resolve();
-const frontendPath = path.join(__dirnamePath, "../dist-frontend");
+const frontendPath = path.join(__dirnamePath, "dist-frontend");
 
 app.use(express.static(frontendPath));
 
@@ -34,7 +34,7 @@ app.use("/api/v1/device", deviceRoutes);
 
 // SPA fallback (React/Vite/Angular)
 app.get("*", (req, res) => {
-    res.sendFile(path.join(frontendPath, "index.html"));
+    res.sendFile(path.join(frontendPath, "dist-frontend", "index.html"));
 });
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
