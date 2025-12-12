@@ -19,7 +19,7 @@ app.use(express.json());
 
 const __dirnamePath = path.resolve();
 
-const frontendPath = path.join(__dirnamePath, "../frontend-dist");
+const frontendPath = path.join(__dirnamePath, "../dist-frontend");
 
 app.use(express.static(frontendPath));
 
